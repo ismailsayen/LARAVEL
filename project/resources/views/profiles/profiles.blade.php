@@ -1,4 +1,4 @@
-<x-master>
+<x-master location="Tous les profiles">
     @empty($profiles)
         <x-alert text="red">
             error alert!

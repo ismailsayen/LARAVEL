@@ -1,10 +1,11 @@
+@props(['location'])
 <!doctype html>
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Social Network </title>
+    <title> Social Network | {{$location}} </title>
     @vite('resources/css/app.css')
 </head>
 <style>

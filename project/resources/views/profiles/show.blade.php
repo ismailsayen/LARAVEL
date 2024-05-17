@@ -1,7 +1,8 @@
-<x-master>
+<x-master location='Profile'>
     <div class="max-w-sm p-6 bg-gray-500 border border-gray-700 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <h5 class="mb-2 text-2xl font-semibold tracking-tight text-white">{{$profile->name}}</h5>
         <p class="mb-3 font-normal text-neutrale-400">{{$profile->bio}}</p>
+        <p class="mb-3 font-bold text-neutral-900">{{$profile->email}}</p>
         <a href="{{route('profiles.index')}}" class="inline-flex font-medium items-center text-blue-400 hover:underline">
             Retour
             <svg class="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">

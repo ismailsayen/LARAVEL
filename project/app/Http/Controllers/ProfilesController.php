@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Profile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class ProfilesController extends Controller
 {
@@ -16,9 +17,8 @@ class ProfilesController extends Controller
     {
         return view('profiles.show', compact('profile'));
     }
-    public function create(Request $request)
+    public function create()
     {
-
         return view('profiles.create');
     }
     public function store(Request $request)
@@ -29,16 +29,14 @@ class ProfilesController extends Controller
         $password = $request->password;
         $bio = $request->bio;
 
-        $request->validate([
-            'email' => 'required'
+        $formField = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'password' => 'required|string|min:8|confirmed',
+            'bio' => 'required|string|max:1000'
         ]);
-
-        Profile::create([
-            'name' => $name,
-            'email' => $email,
-            'password' => $password,
-            'bio' => $bio
-        ]);
+        $formField['password'] = Hash::make($password);
+        Profile::create($request->post());
 
         return redirect()->route('profiles.index')->with('success', 'votr utilisateur est ajoutée avec succé');
     }

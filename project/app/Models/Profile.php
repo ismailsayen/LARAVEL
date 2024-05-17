@@ -14,4 +14,8 @@ class Profile extends Model
         'password',
         'bio'
     ];
+    public function getRouteKeyName()
+    {
+        return 'id';
+    }
 }
