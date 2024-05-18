@@ -10,13 +10,13 @@
 </head>
 <style>
     body {
-        background-color: rgb(37, 37, 37)
+        background-color: #131316;
     }
 </style>
 
 <body class="text-neutral-100 ">
     @include('layouts.nav')
-    <main class="bg-gray-800 w-[98%] mx-auto my-2 p-2">
+    <main class="bg-master w-[98%] mx-auto my-2 p-2  rounded-xl">
         <div>
             @include('layouts.flashbag')
         </div>
