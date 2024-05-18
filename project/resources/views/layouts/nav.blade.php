@@ -34,21 +34,29 @@
                         class="block py-2 px-3 text-neutral-200 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
                 </li>
                 @auth
-                <li class="p-4">
-                    <a href="{{route('login.logOut')}}" class="block p-2 text-neutral-200 bg-red-600 rounded hover:bg-red-700 hover:text-white">
-                        Se déconnecter
-                    </a>
-                </li>
-                <li class="p-2 text-neutral-200">
-                    <p>{{auth()->user()->name}}</p>
-                </li>
+                    <div class="dropdown p-4">
+                        <button class="btn bg-slate-400 flex items-center dropdown-toggle" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <p>{{ auth()->user()->name }}</p>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li class="text-center">
+                                <a href="{{ route('login.logOut') }}" class="text-red-600">
+                                    Se déconnecter
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+
                 @endauth
                 @guest
-                <li class="p-4">
-                    <a href="{{route('login')}}" class="block p-2 text-neutral-200 bg-red-600 rounded hover:bg-red-700 hover:text-white">
-                        Se connecter
-                      </a>
-                </li>
+                    <li class="p-4">
+                        <a href="{{ route('login') }}"
+                            class="block p-2 text-neutral-200 bg-red-600 rounded hover:bg-red-700 hover:text-white">
+                            Se connecter
+                        </a>
+                    </li>
                 @endguest
             </ul>
         </div>

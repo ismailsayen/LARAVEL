@@ -24,10 +24,25 @@ class ProfilesController extends Controller
     }
     public function store(profileRequest $request)
     {
-        $formField =$request->validated();
+        $formField = $request->validated();
         $formField['password'] = Hash::make($request->password);
         Profile::create($formField);
 
         return redirect()->route('profiles.index')->with('success', 'votre utilisateur est ajoutée avec succé');
+    }
+    public function destroy(Profile $profile)
+    {
+        $profile->delete();
+        return redirect()->route('profiles.index')->with('success', 'votre utilisateur a été supprimer avec succé');
+    }
+    public function afficher(Profile $profile)
+    {
+        return view('profiles.edit', compact('profile'));
+    }
+    public function edit(profileRequest $request, Profile $profile)
+    {
+        $formUpdated=$request->validated();
+        dd($formUpdated);
+        
     }
 }
