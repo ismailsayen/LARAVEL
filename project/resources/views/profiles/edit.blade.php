@@ -10,7 +10,7 @@
     <div class="flex w-full flex-col items-center justify-center h-screen dark">
         <h2 class="text-2xl font-bold text-gray-200 mb-7">Modifier Profile</h2>
         <div class="w-full max-w-md bg-gray-800 rounded-lg shadow-md p-6 border  border-neutral-200">
-            <form class="flex flex-col" action="{{ route('edit', $profile->id) }}" method="POST" enctype="multipart/form-data">
+            <form class="flex flex-col" action="{{ route('profiles.edit', $profile->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('put')
                 <div class="flex space-x-4 mb-7">
