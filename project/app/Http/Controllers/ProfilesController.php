@@ -28,7 +28,7 @@ class ProfilesController extends Controller
         $formField['password'] = Hash::make($request->password);
         Profile::create($formField);
 
-        return redirect()->route('profiles.index')->with('success', 'votre utilisateur est ajoutée avec succé');
+        return redirect()->route('profiles.index')->with('success', 'votre utilisateur a été ajoutée avec succé');
     }
     public function destroy(Profile $profile)
     {
@@ -42,7 +42,8 @@ class ProfilesController extends Controller
     public function edit(profileRequest $request, Profile $profile)
     {
         $formUpdated=$request->validated();
-        dd($formUpdated);
-        
+        $profile->fill($formUpdated)->save();
+        return redirect()->route('profiles.edit',$profile->id)->with('success', 'votre utilisateur a été modifié avec succé');
+
     }
 }
