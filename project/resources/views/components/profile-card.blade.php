@@ -14,7 +14,7 @@
                 </a>
             </li>
             <li>
-                <form action="{{ route('profiles.afficher', $profile->id) }}" method="GET">
+                <form action="{{ route('profiles.edit', $profile->id) }}" method="GET">
                     @csrf
                     <button class="inline-block py-2 text-blue-400 rounded-full text-sm font-semibold">
                         Modifier

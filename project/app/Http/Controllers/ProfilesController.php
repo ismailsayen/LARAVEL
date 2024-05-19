@@ -40,11 +40,11 @@ class ProfilesController extends Controller
         $profile->delete();
         return redirect()->route('profiles.index')->with('success', 'votre utilisateur a été supprimer avec succé');
     }
-    public function afficher(Profile $profile)
+    public function edit(Profile $profile)
     {
         return view('profiles.edit', compact('profile'));
     }
-    public function edit(profileRequest $request, Profile $profile)
+    public function update(profileRequest $request, Profile $profile)
     {
         $formUpdated=$request->validated();
         $formUpdated['password'] = Hash::make($request->password);
