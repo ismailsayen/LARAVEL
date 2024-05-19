@@ -25,7 +25,8 @@ class profileRequest extends FormRequest
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'password' => 'required|string|min:8|confirmed',
-            'bio' => 'required|string|max:1000'
+            'bio' => 'required|string|max:1000',
+            'image'=>'image|mimes:png,jpg,jpeg,svg|max:10240'
         ];
     }
 }

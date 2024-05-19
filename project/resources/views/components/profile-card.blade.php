@@ -1,7 +1,7 @@
 @props(['profile'])
-<div class="max-w-sm h-[500px] p-3 bg-gray-500 border border-gray-700 rounded-lg shadow ">
-    <div class="w-full flex  justify-end">
-        <span class="font-bold  p-1  rounded-full cursor-pointer" type="button" id="dropdownMenuButton1"
+<div class="max-w-sm p-1 h-[500px]  bg-gray-500 border border-gray-700 rounded-lg shadow ">
+    <div class="w-full flex  justify-end relative">
+        <span class="font-bold p-1 rounded-full cursor-pointer" type="button" id="dropdownMenuButton1"
             data-bs-toggle="dropdown" aria-expanded="false">
             ...
         </span>
@@ -35,7 +35,7 @@
         </ul>
     </div>
 
-    <img class="w-full h-1/2  " src="https://picsum.photos/200/300" alt="Sunset in the mountains">
+    <img class="w-full h-1/2 rounded-lg " src="{{asset('storage/'.$profile->image)}}" alt="{{$profile->name}}">
     <h5 class="mb-2 text-2xl font-semibold tracking-tight text-white">{{ $profile->name }}</h5>
     <hr>
     <small> Memre depuis: {{ $profile->created_at }}</small>
