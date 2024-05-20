@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 
 class ProfilesController extends Controller
 {
+    
     public function index()
     {
         $profiles = Profile::paginate(8);

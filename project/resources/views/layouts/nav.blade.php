@@ -15,43 +15,43 @@
         <div class="hidden w-full md:block md:w-auto" id="navbar-default">
             <ul
                 class="font-medium flex items-center flex-col  md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-200 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-gray-menu dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                <li class="p-4">
-                    <a href="{{ route('homePage') }}"
+                <li class="p-3">
+                    <a href="{{ route('publications.index') }}"
                         class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
                         aria-current="page">Home</a>
                 </li>
-                <li class="p-4">
+                <li class="p-3">
                     <a href="{{ route('profiles.index') }}"
                         class="block py-2 px-3 text-neutral-200 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Tous
                         les Profiles</a>
                 </li>
-                <li class="p-4">
-                    <a href="#"
-                        class="block py-2 px-3 text-neutral-200 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>
+                <li class="p-3">
+                    <a href="{{ route('publications.create') }}"
+                    class="block py-2 px-3 text-neutral-200 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                    Ajouter une Publication
+                </a>
                 </li>
-                <li class="p-4">
+                <li class="p-3">
                     <a href="#"
                         class="block py-2 px-3 text-neutral-200 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
                 </li>
                 @auth
-                    <div class="dropdown p-4">
+                    <div class="dropdown p-3">
                         <button class="btn bg-slate-400 flex items-center dropdown-toggle" type="button"
                             id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             <p>{{ auth()->user()->name }}</p>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li class="text-center">
-                                <a href="{{ route('login.logOut') }}" class="text-red-600">
+                                <a href="{{ route('login.logout') }}" class="text-red-600">
                                     Se déconnecter
                                 </a>
                             </li>
                         </ul>
                     </div>
-
-
                 @endauth
                 @guest
-                    <li class="p-4">
+                    <li class="p-3">
                         <a href="{{ route('login') }}"
                             class="block p-2 text-neutral-200 bg-red-600 rounded hover:bg-red-700 hover:text-white">
                             Se connecter
