@@ -21,7 +21,7 @@
                     <form action="{{ route('publications.destroy', $publication->id) }}" method="POST">
                         @method('delete')
                         @csrf
-                        <button class="inline-block py-2  rounded-full text-sm font-semibold text-red-700">
+                        <button onclick="return confirm('vous etes sur de le supprimer')" class="inline-block py-2  rounded-full text-sm font-semibold text-red-700">
                             Supprimer
                         </button>
                     </form>
