@@ -16,6 +16,9 @@ class AuthMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
+        if ($request->routeIs('publications.index')) {
+            return $next($request);
+        }
         if(!Auth::check()){
             return to_route('login');
         }

@@ -6,8 +6,8 @@ use App\Http\Controllers\ProfilesController;
 use App\Http\Controllers\PublicationController;
 use Illuminate\Support\Facades\Route;
 
-Route::resource('profiles', ProfilesController::class)->middleware('auth');
-Route::resource('publications', PublicationController::class)->middleware('auth');
+Route::resource('profiles', ProfilesController::class)->middleware('isAuth');
+Route::resource('publications', PublicationController::class)->middleware('isAuth');
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', [loginController::class, 'show'])->name('login');

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
+use App\Models\Publication;
 class Profile extends Model
 {
     use HasFactory;
@@ -25,6 +25,9 @@ class Profile extends Model
      // pour les affecté une image par defaut au cas ou l'image est null
      public function getImageAttribute($value){
         return $value??'profiles/default.png';
+    }
+    public function publications(){
+        return $this->hasMany(Publication::class,'id_profile');
     }
 
 }
